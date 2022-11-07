@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Driving Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="carCanvas"></canvas>
+    <div id="verticalButtons">
+        <button data-modal-target="#modal" id="info-button">❔</button>
+        <button onclick="save()">💾</button>
+        <button onclick="discard()">💥</button>
+    </div>
+    <canvas id="networkCanvas"></canvas>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Self Driving Car</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Das Ziel dieser App ist es, ein Auto zu generieren, das sich "autonom" durch den Verkehr bewegen kann.<br>
+            Beim Laden der Seite werden jedes Mal 100 zufällige Autos erstellt.<br> 
+            Auf der rechten Seite wird das Neuronale Netzwerk des Autos, das am weitesten vorne ist dargestellt. Es ist quasi das "Gehirn" des Autos. <br>
+            Die unteren Punkte stellen die Sensoren (gelbe Linien) dar. Je näher das Auto an einem anderen Fahrzeug oder der Wand ist, desto stärker ist das Signal und der gelbe Punkt wird heller. <br>
+            Die Punkte mit den Pfeilen zeigen an, in welche Richtung das Auto steuert <br>
+            Die Punkte in der Mitte sind die "Gehirnzellen" des Autos. Diese verarbeiten die Eingaben der Sensoren und steuern das Auto <br>
+            Da die "Gehirne" zufällig generiert werden, sind manche Autos "schlauer" als andere. <br><br>
+            Mit dem 💾-Knopf kann das aktuell dargestellte Gehirn gespeichert werden. Beim Neuladen der Seite orientieren sich nun alle Autos an diesem Gehirn (mit einer Abweichung von 10%). Dadruch können immer intelligentere Autos erstellt werden.<br>
+            Liefert das gespeicherte Gehirn nicht die gewünschten Ergebnisse, kann es mit dem 💥-Knopf gelöscht werden.
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <script src="info.js"></script>
+    <script src="visualizer.js"></script>
+    <script src="network.js"></script>
+    <script src="sensor.js"></script>
+    <script src="utils.js"></script>
+    <script src="road.js"></script>
+    <script src="controls.js"></script>
+    <script src="car.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
