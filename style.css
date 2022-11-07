@@ -5,7 +5,7 @@
 body{
     margin: 0;
     background: rgb(71, 66, 74);
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
